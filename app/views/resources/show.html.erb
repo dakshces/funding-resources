@@ -2,39 +2,38 @@
 
     <h1 class="result-text"><%= @resource.title %></h1>
     
-    <% if @resource.amount %>
-    <h3 class="result-text">Amount: $<%= @resource.amount %></h3>
-    <% end %>
+    <hr size="2px" width="100%" color="#000"> 
     
-    <% if @resource.source %>
-        <h3 class="result-text">Source: <%= @resource.source %></h3>
-    <% end %>
-    
-  
-    
-    <% if @resource.description %>
-    <h3 class="result-text">Description: <%= @resource.description %></h3>
-    <% end %>
-    
-    <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
-    
-    
+    <%#= this makes the card on the far right side of the page. the card shows contact info %>
         <div class="float-right">
             <div class = "col-rg-20 col-md-20 col-sm-12 mb-3", align = "center">
                 <div class="card" style="height: 275px;">
-                    <div class="card-body">
+                    <div class="card-body" style="background-color: grey;">
                         <% if @resource.contact_person %>
-                        <h3 class="result-text">Contact Person: <%= @resource.contact_person %></h3>
+                        <h3 class="result-text"><span class="card">Contact Person:</span> <%= @resource.contact_person %></h3>
                         <% end %>
                         
                         <% if @resource.email %>
-                        <h3 class="result-text">Email: <%= @resource.email %></h3>
+                        <h3 class="result-text"><span class="card">Email:</span> <%= @resource.email %></h3>
                         <% end %>
                     </div>
                 </div>
             </div>
         </div>
-
-   
     
+    <% if @resource.amount %>
+    <h3 class="result-text"><span class="field">Amount:</span> $<%= @resource.amount %></h3>
+    <% end %>
+    
+    <% if @resource.source %>
+        <h3 class="result-text"><span class="field">Source:</span> <%= @resource.source %></h3>
+    <% end %>
+    
+    
+    
+    <% if @resource.description %>
+    <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description"><%= @resource.description %>The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.</span></h3>
+    <% end %>
+    
+    <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
 </div>
