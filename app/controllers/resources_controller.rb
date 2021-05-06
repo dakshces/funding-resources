@@ -12,9 +12,8 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
-      flash[:success] = "Your funding resource has been successfully created"
+      flash[:success] = "Resource successfully submitted for review!"
       redirect_to add_funds_path
-      # Handle a successful save.
     else
       render 'new'
     end
