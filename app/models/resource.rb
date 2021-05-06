@@ -1,5 +1,10 @@
 class Resource < ApplicationRecord
   #Including pg_search capabilities to this model
+    
+  validates :title, presence: true
+  validates :contact_person, presence: true
+
+  
   include PgSearch::Model
   
   # include Gutentag gem
@@ -16,4 +21,5 @@ class Resource < ApplicationRecord
   def print_decription
     return "#{description}"
   end
+  
 end
