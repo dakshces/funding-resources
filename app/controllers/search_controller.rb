@@ -24,5 +24,8 @@ class SearchController < ApplicationController
         @resources = Resource.all
       end
     end
+    # Filter out not approved resources
+    # Possible Task: It might be faster to do this filter before searching
+    @resources = @resources.select { |n| n.approved }
   end
 end
