@@ -5,7 +5,6 @@ class Resource < ApplicationRecord
   validates :contact_person, presence: true
   
   #Including pg_search capabilities to this model
-    
   validates :title, presence: true
   validates :contact_person, presence: true
 
