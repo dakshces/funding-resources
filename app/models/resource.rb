@@ -8,6 +8,7 @@ class Resource < ApplicationRecord
     
   validates :title, presence: true
   validates :contact_person, presence: true
+  validates :email, presence: true
 
   
   include PgSearch::Model
