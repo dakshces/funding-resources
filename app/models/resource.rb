@@ -1,4 +1,14 @@
 class Resource < ApplicationRecord
+  
+  
+  # This email regex could be improved
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+  
+  # Validates Resources Parameters
+  validates :title, presence: true, length: { maximum: 255 }
+  validates :contact_person, presence: true, length: { maximum: 255 }
+  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  
   #Including pg_search capabilities to this model
   include PgSearch::Model
   
@@ -16,4 +26,5 @@ class Resource < ApplicationRecord
   def print_decription
     return "#{description}"
   end
+  
 end
