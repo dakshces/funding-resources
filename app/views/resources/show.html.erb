@@ -1,27 +1,7 @@
 <div class="container">
 
     <h1 class="result-text"><%= @resource.title %></h1>
-    
-<<<<<<< HEAD
     <hr size="2px" width="100%" color="#000"> 
-=======
-    <% if @resource.amount %>
-        <h3 class="result-text">Amount: $<%= @resource.amount %></h3>
-    <% end %>
-    
-    <% if @resource.source %>
-        <h3 class="result-text">Source: <%= @resource.source %></h3>
-    <% end %>
-    
-  
-    
-    <% if @resource.description %>
-        <h3 class="result-text">Description: <%= @resource.description %></h3>
-    <% end %>
-    
-    <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
-    
->>>>>>> origin/master
     
     <%#= this makes the card on the far right side of the page. the card shows contact info %>
         <div class="float-right">
