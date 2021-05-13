@@ -1,3 +1,30 @@
 #dark .result-text {
     color: white;
 }
+
+.result-text {
+    color: black;
+    font-family: sans-serif;
+}
+
+.field {
+    font-weight: bold;
+    font-size: 1.25em;
+    font-family: sans-serif;
+}
+
+.card {
+    font-weight: bold;
+    font-size: 0.9em;
+    font-family: sans-serif;
+}
+
+
+.description {
+    word-wrap: break-word;
+    text-align: justify;
+    width: 60%;
+    display: inline-block;
+    line-height: 1.25em;
+    font-family: sans-serif;
+}

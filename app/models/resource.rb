@@ -23,7 +23,7 @@ class Resource < ApplicationRecord
   
   # Not currently validating email  
   # This email regex could be improved
-  #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
   # validates :email, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   
   #Including pg_search capabilities to this model

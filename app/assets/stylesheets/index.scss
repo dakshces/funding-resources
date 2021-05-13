@@ -41,6 +41,11 @@ body {
 
 #light .btn-primary {
   color: white;
+  transition-duration: 0.5s;
+}
+
+.btn-primary:hover {
+  background-color: #D81E05;
 }
 
 #dark .album {
