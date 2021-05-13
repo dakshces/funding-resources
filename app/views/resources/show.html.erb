@@ -7,7 +7,7 @@
     <% end %>
     
     <% if @resource.source %>
-        <h3 class="result-text">Source: <%= @resource.source %></h3>
+        <h3 class="result-text">Funding Source(Department): <%= @resource.source %></h3>
     <% end %>
     
   
@@ -16,7 +16,7 @@
         <h3 class="result-text">Description: <%= @resource.description %></h3>
     <% end %>
     
-    <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
+    <%= link_to "Fund Website", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
     
     
         <div class="float-right">
@@ -24,7 +24,7 @@
                 <div class="card" style="height: 275px;">
                     <div class="card-body">
                         <% if @resource.contact_person %>
-                        <h3 class="result-text">Contact Person: <%= @resource.contact_person %></h3>
+                        <h3 class="result-text">Fund Owner/Contact Person: <%= @resource.contact_person %></h3>
                         <% end %>
                         
                         <% if @resource.email %>
