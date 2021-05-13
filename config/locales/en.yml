@@ -31,3 +31,8 @@
 
 en:
   access_denied: "You don't have permission to see that."
+  activerecord:
+    attributes:
+      resource:
+        title: Fund name
+        
