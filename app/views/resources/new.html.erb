@@ -1,5 +1,5 @@
 <% provide(:title, 'Add Fund') %>
-<h1>Add Funds</h1>
+<h1>Add Fund</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -12,8 +12,12 @@
       <%= f.label :contact_person %>
       <%= f.text_field :contact_person, class: 'form-control' %>
       
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form-control' %>
+      <%= f.label :source %>
+      <%= f.text_field :source, class: 'form-control' %>
+      
+      <!--<%= f.label :email %>-->
+      <!--<%= f.text_field :email, class: 'form-control' %>-->
+      
       
       
       <%= f.submit "Submit Resource", class: "btn btn- primary" %>

@@ -23,7 +23,7 @@ ActiveAdmin.register Resource do
   
   permit_params :title, :description, :amount, :source, :contact_person, :web, :approved, :email, tag_ids: []
   
-  
+  # Customize the form for editing and adding resources
   form do |f|
     f.inputs do
       f.input :title
@@ -66,6 +66,32 @@ ActiveAdmin.register Resource do
     actions
     # column "Approved", sortable: :approved do |resource|
   end
+
+  # Customize columns displayed on the index screen in the table
+  index do
+    selectable_column
+    column :approved
+    column :title
+    column :contact_person
+    column :source
+    column :created_at
+    column :updated_at
+    actions
+  end
+
+  # Customize filters displayed on the left of the resources
+  filter :contact_person, as: :select
+  filter :source, as: :select
+  filter :approved, as: :check_boxes
+  filter :title
+  filter :created_at
+  filter :updated_at
+  filter :description
+  filter :web
+  filter :email
+  filter :tags, as: :check_boxes
+ 
+  config.sort_order = 'approved_desc'
 
 end
 
