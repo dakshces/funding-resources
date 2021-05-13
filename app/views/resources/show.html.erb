@@ -9,7 +9,7 @@
                 <div class="card" style="height: 275px;">
                     <div class="card-body" style="background-color: grey;">
                         <% if @resource.contact_person %>
-                        <h3 class="result-text"><span class="card">Contact Person:</span> <%= @resource.contact_person %></h3>
+                        <h3 class="result-text"><div class="card">Contact Person:</div> <%= @resource.contact_person %></h3>
                         <% end %>
                         
                         <% if @resource.email %>
@@ -31,7 +31,7 @@
     
     
     <% if @resource.description %>
-    <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description"><%= @resource.description %>The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.</span></h3>
+    <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
     <% end %>
     
     <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>

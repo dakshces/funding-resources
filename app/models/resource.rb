@@ -12,14 +12,13 @@ class Resource < ApplicationRecord
   # Validates Resources Parameters
   validates :title, presence: true, uniqueness: { message: ": Fund Title has already been submitted." }, length: { maximum: 255 }
   
+  # Validates Resources Parameters for Add Fund page
   validates_with ContactValidator
   validates :contact_person, length: { maximum: 255 }
   validates :source, length: { maximum: 255 }
-  
-  # Validates Resources Parameters
   validates :title, presence: true, length: { maximum: 255 }
-  validates :contact_person, presence: true, length: { maximum: 255 }
-  #validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  # validates :contact_person, presence: true, length: { maximum: 255 }
+  # validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   
   # Not currently validating email  
   # This email regex could be improved
