@@ -3,37 +3,13 @@
     <h1 class="result-text"><%= @resource.title %></h1>
     <hr size="2px" width="100%" color="#000"> 
     
-<<<<<<< HEAD
-    <% if @resource.amount %>
-        <h3 class="result-text">Amount: $<%= @resource.amount %></h3>
-    <% end %>
-    
-    <% if @resource.source %>
-        <h3 class="result-text">Department: <%= @resource.source %></h3>
-    <% end %>
-    
-  
-    
-    <% if @resource.description %>
-        <h3 class="result-text">Description: <%= @resource.description %></h3>
-    <% end %>
-    
-    <%= link_to "Fund Website", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
-    
-    
-=======
     <%#= this makes the card on the far right side of the page. the card shows contact info %>
->>>>>>> 7c2ae593e90a22f2744e62c046f84cac91ea0c89
         <div class="float-right">
             <div class = "col-rg-20 col-md-20 col-sm-12 mb-3", align = "center">
                 <div class="card" style="height: 275px;">
                     <div class="card-body" style="background-color: grey;">
                         <% if @resource.contact_person %>
-<<<<<<< HEAD
-                        <h3 class="result-text">Fund Owner: <%= @resource.contact_person %></h3>
-=======
                         <h3 class="result-text"><div class="card">Contact Person:</div> <%= @resource.contact_person %></h3>
->>>>>>> 7c2ae593e90a22f2744e62c046f84cac91ea0c89
                         <% end %>
                         
                         <% if @resource.email %>

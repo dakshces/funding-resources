@@ -26,7 +26,6 @@ ActiveAdmin.register Resource do
   # Customize the form for editing and adding resources
   form do |f|
     f.inputs do
-<<<<<<< HEAD
       f.input :title, label: 'Fund Name'
       f.input :description, label: 'Description'
       # Also update permit_params above
@@ -39,19 +38,6 @@ ActiveAdmin.register Resource do
       f.input :web, label: 'Website'
       f.input :tags, label: 'Tags', as: :check_boxes
       f.input :approved, label: 'Approved'
-=======
-      f.input :title
-      f.input :description
-      f.input :amount
-      f.input :source
-      f.input :contact_person
-      f.input :email
-      f.input :web
-      f.input :tags, as: :check_boxes
-      f.input :approved
-
-      # there is a connection between resources and tags
->>>>>>> 7c2ae593e90a22f2744e62c046f84cac91ea0c89
     end
     f.actions
     
