@@ -6,19 +6,14 @@
     <%= form_with(model: @resource, local: true) do |f| %>
     <%= render 'devise/shared/error_messages' %>
     
-      <%= f.label :title %>
+      <%= f.label 'Fund Name' %>
       <%= f.text_field :title, class: 'form-control' %>
     
-      <%= f.label :contact_person %>
+      <%= f.label 'Fund Owner/Contact Person' %>
       <%= f.text_field :contact_person, class: 'form-control' %>
       
-      <%= f.label :source %>
+      <%= f.label 'Department/Fund Source' %>
       <%= f.text_field :source, class: 'form-control' %>
-      
-      <!--<%= f.label :email %>-->
-      <!--<%= f.text_field :email, class: 'form-control' %>-->
-      
-      
       
       <%= f.submit "Submit Resource", class: "btn btn- primary" %>
     <% end %>
