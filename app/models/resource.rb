@@ -10,7 +10,7 @@ end
 class Resource < ApplicationRecord
   
   # Validates Resources Parameters
-  validates :title, presence: true, uniqueness: { message: ": Fund Title has already been submitted." }, length: { maximum: 255 }
+  #validates :title, presence: true, uniqueness: { message: ": Fund Title has already been submitted." }, length: { maximum: 255 }
   
   # Validates Resources Parameters for Add Fund page
   validates_with ContactValidator

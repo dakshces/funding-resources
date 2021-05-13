@@ -9,13 +9,13 @@
   <%= form_with(model: @resource, local: true) do |f| %>
   <%= render 'devise/shared/error_messages' %>
     
-    <span class="field"> <%= f.label :title %> </span>
+    <span class="field"> <%= f.label :title, "Fund Name" %> </span>
     <%= f.text_field :title, class: 'form-control' %>
     
-    <span class="field"><%= f.label "#{ :contact_person } (Fund Owner)" %></span>
+    <span class="field"><%= f.label :contact_person, "Contact Person/Fund Owner" %></span>
     <%= f.text_field :contact_person, class: 'form-control' %>
       
-    <span class="field"><%= f.label :source %></span>
+    <span class="field"><%= f.label :source, "Funding Source (Department)" %></span>
     <%= f.text_field :source, class: 'form-control' %>
       
     <span class="field"><%= f.label :email %></span>
