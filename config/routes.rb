@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   # get 'resources/new', to:'resources#new', as:'add_funds'
   # get 'resources/new', to:'resources#new', as:'new_resource'
   get '/add_funds', to:'pages#add_funds', as:'add_funds'
+  
 end

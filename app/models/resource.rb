@@ -7,7 +7,7 @@ class Resource < ApplicationRecord
   # Validates Resources Parameters
   validates :title, presence: true, length: { maximum: 255 }
   validates :contact_person, presence: true, length: { maximum: 255 }
-  validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  #validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   
   #Including pg_search capabilities to this model
   include PgSearch::Model

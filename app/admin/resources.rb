@@ -33,11 +33,38 @@ ActiveAdmin.register Resource do
       f.input :contact_person
       f.input :email
       f.input :web
-      f.input :tags
+      f.input :tags, as: :check_boxes
       f.input :approved
+
       # there is a connection between resources and tags
     end
     f.actions
+    
+  end
+  
+    filter :contact_person, as: :select
+    filter :source, as: :select
+    filter :approved, as: :check_boxes
+    filter :title
+    filter :created_at
+    filter :updated_at
+    filter :description
+    filter :web
+    filter :email
+    filter :tags, as: :check_boxes
+ 
+  config.sort_order = 'approved_desc'
+  
+  # Customize columns displayed on the index screen in the table
+  index do
+    column :approved
+    column :title
+    column :contact_person
+    column :email
+    column :created_at
+    column :updated_at
+    actions
+    # column "Approved", sortable: :approved do |resource|
   end
 
 end
