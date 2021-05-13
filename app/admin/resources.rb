@@ -26,6 +26,7 @@ ActiveAdmin.register Resource do
   # Customize the form for editing and adding resources
   form do |f|
     f.inputs do
+<<<<<<< HEAD
       f.input :title, label: 'Fund Name'
       f.input :description, label: 'Description'
       # Also update permit_params above
@@ -38,8 +39,47 @@ ActiveAdmin.register Resource do
       f.input :web, label: 'Website'
       f.input :tags, label: 'Tags', as: :check_boxes
       f.input :approved, label: 'Approved'
+=======
+      f.input :title
+      f.input :description
+      f.input :amount
+      f.input :source
+      f.input :contact_person
+      f.input :email
+      f.input :web
+      f.input :tags, as: :check_boxes
+      f.input :approved
+
+      # there is a connection between resources and tags
+>>>>>>> 7c2ae593e90a22f2744e62c046f84cac91ea0c89
     end
     f.actions
+    
+  end
+  
+    filter :contact_person, as: :select
+    filter :source, as: :select
+    filter :approved, as: :check_boxes
+    filter :title
+    filter :created_at
+    filter :updated_at
+    filter :description
+    filter :web
+    filter :email
+    filter :tags, as: :check_boxes
+ 
+  config.sort_order = 'approved_desc'
+  
+  # Customize columns displayed on the index screen in the table
+  index do
+    column :approved
+    column :title
+    column :contact_person
+    column :email
+    column :created_at
+    column :updated_at
+    actions
+    # column "Approved", sortable: :approved do |resource|
   end
 
   # Customize columns displayed on the index screen in the table
