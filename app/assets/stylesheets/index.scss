@@ -103,12 +103,22 @@ p a {
   color: white;
 }
 
+.jumbotron{
+  display: table;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100px;
+  margin-bottom: 0 !important;
+}
+
 #dark .jumbotron{
   background-color: transparent;
 }
 
 .jumbotron-heading {
   font-family: "Lato", sans-serif;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #dark .jumbotron-heading {
