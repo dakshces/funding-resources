@@ -36,6 +36,9 @@ ActiveAdmin.register Resource do
     f.inputs do
       f.input :title, label: 'Fund Name'
       f.input :description, label: 'Description'
+      # Also update permit_params above
+      # f.input :requirements, label: 'Requirements'
+      # f.input :criteria, label: 'Criteria'
       f.input :amount, label: 'Amount'
       f.input :source, label: 'Department'
       f.input :contact_person, label: 'Fund Owner'
@@ -71,6 +74,8 @@ ActiveAdmin.register Resource do
   filter :created_at
   filter :updated_at
   filter :description, label: 'Description'
+  # filter :requirements, label: 'Requirements'
+  # filter :criteria, label: 'Criteria'
   filter :web, label: 'Website'
   filter :email, label: 'Email'
   filter :tags, label: 'Tags', as: :check_boxes

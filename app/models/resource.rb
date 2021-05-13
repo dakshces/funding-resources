@@ -2,7 +2,7 @@
 class ContactValidator < ActiveModel::Validator
   def validate(record)
     if (not record.contact_person.present? and not record.source.present?)
-      record.errors.add :base, "Must provide a contact person and/or a source."
+      record.errors.add :base, "Must provide a fund owner and/or a department."
     end
   end
 end
