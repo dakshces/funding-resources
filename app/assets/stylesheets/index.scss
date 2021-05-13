@@ -1,3 +1,7 @@
+#dark .card {
+  background-color: #888484;
+}
+
 .card-title {
   font-family: "Roboto";
   font-size: 18px;
@@ -34,22 +38,31 @@ body {
 }
 
 #dark .btn-primary {
-  color: white;
-  background-color: black;
-  border: black;
+  color: white !important;
+  font-family: "Lato", sans-serif;
+  background-color: #121212;
+  transition-duration: 0.5s;
+  border-color: transparent;
+}
+
+#dark .btn-primary:hover {
+  background-color: #D81E05;
 }
 
 #light .btn-primary {
   color: white;
+  font-family: "Lato", sans-serif;
   transition-duration: 0.5s;
+  background-color: gray;
+  border-color: transparent;
 }
 
-.btn-primary:hover {
+#light .btn-primary:hover {
   background-color: #D81E05;
 }
 
 #dark .album {
-  background-color: black !important;
+  background-color: #121212 !important;
 }
 
 .checkbox-text {
@@ -72,11 +85,47 @@ h2 a {
 
 p a {
   color: black !important;
+  font-size: 14px;
 }
 
 #dark .btn-dark {
   height: 40px;
-  color: black;
+  color: #121212;
   background: white;
   text-shadow:none !important;
+}
+
+.lead {
+  font-family: "Lato", sans-serif;
+}
+
+#dark .lead {
+  color: white;
+}
+
+.jumbotron{
+  display: table;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100px;
+  margin-bottom: 0 !important;
+}
+
+#dark .jumbotron{
+  background-color: transparent;
+}
+
+.jumbotron-heading {
+  font-family: "Lato", sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#dark .jumbotron-heading {
+  color: white;
+}
+
+.home-text{
+  font-family: "Lato", sans-serif;
+  -webkit-text-stroke: 3px black;
 }

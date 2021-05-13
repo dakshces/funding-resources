@@ -21,7 +21,7 @@ ActiveAdmin.register Resource do
   # https://activeadmin.info/2-resource-customization.html
   
   
-  permit_params :title, :description, :amount, :source, :contact_person, :web, :approved, :email, tag_ids: []
+  permit_params :title, :description, :amount, :source, :contact_person, :web, :approved, :email, :criteria, :requirements, tag_ids: []
   
   # Customize the form for editing and adding resources
 
@@ -35,14 +35,13 @@ ActiveAdmin.register Resource do
   form do |f|
     f.inputs do
       f.input :title, label: 'Fund Name'
-      f.input :description, label: 'Description'
-      # Also update permit_params above
-      # f.input :requirements, label: 'Requirements'
-      # f.input :criteria, label: 'Criteria'
       f.input :amount, label: 'Amount'
-      f.input :source, label: 'Department'
       f.input :contact_person, label: 'Fund Owner'
+      f.input :source, label: 'Department'
       f.input :email, label: 'Email'
+      f.input :description, label: 'Description'
+      f.input :requirements, label: 'Requirements'
+      f.input :criteria, label: 'Criteria'
       f.input :web, label: 'Website'
       f.input :tags, label: 'Tags', as: :check_boxes
       f.input :approved, label: 'Approved'
@@ -74,8 +73,8 @@ ActiveAdmin.register Resource do
   filter :created_at
   filter :updated_at
   filter :description, label: 'Description'
-  # filter :requirements, label: 'Requirements'
-  # filter :criteria, label: 'Criteria'
+  filter :requirements, label: 'Requirements'
+  filter :criteria, label: 'Criteria'
   filter :web, label: 'Website'
   filter :email, label: 'Email'
   filter :tags, label: 'Tags', as: :check_boxes
