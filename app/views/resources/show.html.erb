@@ -3,20 +3,38 @@
     <h1 class="result-text"><%= @resource.title %></h1>
     
     <% if @resource.amount %>
-    <h3 class="result-text">Amount: $<%= @resource.amount %></h3>
+        <h3 class="result-text">Amount: $<%= @resource.amount %></h3>
     <% end %>
     
     <% if @resource.source %>
         <h3 class="result-text">Source: <%= @resource.source %></h3>
     <% end %>
     
-    <% if @resource.contact_person %>
-    <h3 class="result-text">Contact Person: <%= @resource.contact_person %></h3>
-    <% end %>
+  
     
     <% if @resource.description %>
-    <h3 class="result-text">Description: <%= @resource.description %></h3>
+        <h3 class="result-text">Description: <%= @resource.description %></h3>
     <% end %>
     
-    <%= link_to "Contact Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
+    <%= link_to "More Info", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>
+    
+    
+        <div class="float-right">
+            <div class = "col-rg-20 col-md-20 col-sm-12 mb-3", align = "center">
+                <div class="card" style="height: 275px;">
+                    <div class="card-body">
+                        <% if @resource.contact_person %>
+                        <h3 class="result-text">Contact Person: <%= @resource.contact_person %></h3>
+                        <% end %>
+                        
+                        <% if @resource.email %>
+                        <h3 class="result-text">Email: <%= @resource.email %></h3>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
+    
 </div>

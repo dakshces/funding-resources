@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  
   def index
     @tags = Gutentag::Tag.all
     @tag_names_selected = []
@@ -23,6 +24,11 @@ class SearchController < ApplicationController
       else # No tags
         @resources = Resource.all
       end
+      
     end
+    # Filter out not approved resources
+    # Possible Task: It might be faster to do this filter before searching
+    @resources = @resources.select { |n| n.approved }
   end
+  
 end
