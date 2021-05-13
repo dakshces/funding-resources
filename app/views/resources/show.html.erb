@@ -9,29 +9,33 @@
                 <div class="card" style="height: 275px;">
                     <div class="card-body" style="background-color: grey;">
                         <% if @resource.contact_person %>
-                        <h3 class="result-text"><div class="card">Fund Owner:</div> <%= @resource.contact_person %></h3>
+                        <h3 class="card-result-text"><div class="card">Fund Owner:</div> <span class="result-text"><%= @resource.contact_person %></span></h3>
                         <% end %>
                         
                         <% if @resource.email %>
-                        <h3 class="result-text"><span class="card">Email:</span> <%= @resource.email %></h3>
+                        <h3 class="card-result-text"><span class="card">Email:</span> <span class="result-text"><%= @resource.email %></span></h3>
                         <% end %>
                     </div>
                 </div>
             </div>
         </div>
     
-    <% if @resource.amount %>
-    <h3 class="result-text"><span class="field">Amount:</span> $<%= @resource.amount %></h3>
+    <% if @resource.amount.empty? %>
+        <h3 class="result-text"><span class="field">Amount:</span> N/A</h3>
+    <% else %>
+        <h3 class="result-text"><span class="field">Amount:</span> $<%= @resource.amount %> </h3>
     <% end %>
     
-    <% if @resource.source %>
-        <h3 class="result-text"><span class="field">Department:</span> <%= @resource.source %></h3>
+    <% if @resource.source.empty? %>
+        <h3 class="result-text"><span class="field">Source:</span> N/A</h3>
+    <% else %>
+        <h3 class="result-text"><span class="field">Source:</span> <%= @resource.source %> </h3>
     <% end %>
     
-    
-    
-    <% if @resource.description %>
-    <h3 class="result-text"><div class="field">Description:</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
+    <% if @resource.description.empty? %>
+        <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description">No description provided.</span></h3>
+    <% else %>
+        <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
     <% end %>
     
     <%= link_to "Fund Website", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>

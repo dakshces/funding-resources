@@ -7,24 +7,25 @@
     <% end %>
   </a>
 
-  <% if cookies[:theme] == "light" %>
-    <%= link_to "turn on dark mode", root_path(:theme => "dark", :current_path => request.path), class: "darkButton"%>
-  <% else %>
-    <%= link_to "turn on light mode", root_path(:theme => "light", :current_path => request.path), class: "lightButton"%>
-  <% end %>
-  
-  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fas fa-bars"></i>
   </button>
   
+  <ul class="navbar-nav ml-auto">
+  <% if cookies[:theme] == "light" %>
+    <li class ="nav-item" role = "button"><%= link_to "Dark mode", root_path(:theme => "dark", :current_path => request.path)%></li>
+  <% else %>
+    <li class ="nav-item" role = "button"><%= link_to "Light mode", root_path(:theme => "light", :current_path => request.path)%></li>
+  <% end %>
+  </ul>
+  
   <div class="collapse navbar-collapse sticky-top" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item" role = "button">
-        <%= link_to "Add Funds", add_funds_path, class: "#{"active" if (current_page? add_funds_path)}"%>
+        <%= link_to "Browse Funds", browse_path, class: "#{"active" if (current_page? browse_path)}"%>
       </li>
       <li class="nav-item" role = "button">
-        <%= link_to "Browse", browse_path, class: "#{"active" if (current_page? browse_path)}"%>
+        <%= link_to "Add Funds", add_funds_path, class: "#{"active" if (current_page? add_funds_path)}"%>
       </li>
       <li class="nav-item" role = "button">
         <%= link_to "Contact", contact_path, class: "#{"active" if (current_page? contact_path)}"%>
