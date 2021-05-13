@@ -1,28 +1,29 @@
 <% provide(:title, 'Add Fund') %>
-<h1>Add Fund</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @resource, local: true) do |f| %>
-    <%= render 'devise/shared/error_messages' %>
+<div class="container">
+<h1 class="result-text">Add Funds</h1>
+<hr size="2px" width="100%" color="#000">
+
+
+<div class="col-md-6 col-md-offset-3">
+  <%= form_with(model: @resource, local: true) do |f| %>
+  <%= render 'devise/shared/error_messages' %>
     
-      <%= f.label :fund_name %>
-      <%= f.text_field :fund_name, class: 'form-control' %>
+    <span class="field"> <%= f.label :title %> </span>
+    <%= f.text_field :title, class: 'form-control' %>
     
-      <%= f.label "Fund Owner/Contact Person" %>
-      <!-- <%= f.label :contact_person %> -->
-      <%= f.text_field :contact_person, class: 'form-control' %>
+    <span class="field"><%= f.label "#{ :contact_person } (Fund Owner)" %></span>
+    <%= f.text_field :contact_person, class: 'form-control' %>
       
+    <span class="field"><%= f.label :source %></span>
+    <%= f.text_field :source, class: 'form-control' %>
       
-      <%= f.label "Funding source (Department)" %>
-      <%= f.text_field :source, class: 'form-control' %>
+    <span class="field"><%= f.label :email %></span>
+    <%= f.text_field :email, class: 'form-control' %>
+    
+    &nbsp;
       
-      <!--<%= f.label :email %>-->
-      <!--<%= f.text_field :email, class: 'form-control' %>-->
-      
-      
-      
-      <%= f.submit "Submit Resource", class: "btn btn- primary" %>
-    <% end %>
+    <div><%= f.submit "Submit Resource", class: 'btn btn-primary' %></div>
+  <% end %>
   </div>
 </div>
