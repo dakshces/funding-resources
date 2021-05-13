@@ -24,6 +24,14 @@ ActiveAdmin.register Resource do
   permit_params :title, :description, :amount, :source, :contact_person, :web, :approved, :email, tag_ids: []
   
   # Customize the form for editing and adding resources
+
+
+# Alex notes:
+# has_many_through attribute for tags and resources
+# register tags on active admin
+# register model (command line): $> rails generate active_admin:resource [MyModelName]
+
+# Customize the form for editing and adding resources
   form do |f|
     f.inputs do
       f.input :title, label: 'Fund Name'
@@ -40,35 +48,12 @@ ActiveAdmin.register Resource do
       f.input :approved, label: 'Approved'
     end
     f.actions
-    
-  end
-  
-    filter :contact_person, as: :select
-    filter :source, as: :select
-    filter :approved, as: :check_boxes
-    filter :title
-    filter :created_at
-    filter :updated_at
-    filter :description
-    filter :web
-    filter :email
-    filter :tags, as: :check_boxes
- 
-  config.sort_order = 'approved_desc'
-  
-  # Customize columns displayed on the index screen in the table
-  index do
-    column :approved
-    column :title
-    column :contact_person
-    column :email
-    column :created_at
-    column :updated_at
-    actions
-    # column "Approved", sortable: :approved do |resource|
   end
 
-  # Customize columns displayed on the index screen in the table
+ 
+
+
+# Customize columns displayed on the index screen in the table
   index do
     selectable_column
     column 'Approved', :approved
@@ -79,6 +64,7 @@ ActiveAdmin.register Resource do
     column :updated_at
     actions
   end
+ 
 
   # Customize filters displayed on the left of the resources
   filter :contact_person, label: 'Fund Owner', as: :select
@@ -95,10 +81,5 @@ ActiveAdmin.register Resource do
   filter :tags, label: 'Tags', as: :check_boxes
  
   config.sort_order = 'approved_desc'
-
+  
 end
-
-# Alex notes:
-# has_many_through attribute for tags and resources
-# register tags on active admin
-# register model (command line): $> rails generate active_admin:resource [MyModelName]
