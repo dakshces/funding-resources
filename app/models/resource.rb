@@ -1,29 +1,15 @@
-# Validates that either the contact_person or the source field is filled in
-class ContactValidator < ActiveModel::Validator
-  def validate(record)
-    if (not record.contact_person.present? and not record.source.present?)
-      record.errors.add :base, "Must provide a fund owner and/or a department."
-    end
-  end
-end
-
 class Resource < ApplicationRecord
   
-  # Validates Resources Parameters
-  validates :title, presence: true, uniqueness: { message: ": Fund Title has already been submitted." }, length: { maximum: 255 }
-  
   # Validates Resources Parameters for Add Fund page
-  validates_with ContactValidator
   validates :contact_person, length: { maximum: 255 }
   validates :source, length: { maximum: 255 }
   validates :title, presence: true, length: { maximum: 255 }
-  # validates :contact_person, presence: true, length: { maximum: 255 }
-  # validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  validates :contact_person, presence: { message: "and Department can't both be blank." }, on: :create, unless: :source?
+  validates :source, presence: { message: "and Fund Owner can't both be blank." }, on: :create, unless: :contact_person?
   
-  # Not currently validating email  
-  # This email regex could be improved
-  # VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
-  # validates :email, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  # This may be a good validation to have
+  # validates :title, uniqueness: { message: " has already been taken." }
+  
   
   #Including pg_search capabilities to this model
   include PgSearch::Model

@@ -34,5 +34,13 @@ en:
   activerecord:
     attributes:
       resource:
-        title: Fund name
+        title: Fund Name
+        contact_person: Fund Owner
+        source: Department
+    errors:
+      models:
+        resource:
+          attributes:
+            contact_person:
+            source:
         

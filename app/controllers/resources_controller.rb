@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.new(resource_params)
     if @resource.save
       flash[:success] = "Resource successfully submitted for review!"
-      redirect_to add_funds_path
+      redirect_to browse_path
     else
       render 'new'
     end
