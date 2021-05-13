@@ -79,8 +79,8 @@ ActiveRecord::Schema.define(version: 2021_05_06_195128) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "web"
-    t.boolean "approved", default: false
     t.string "email"
+    t.boolean "approved", default: false
   end
 
   create_table "users", force: :cascade do |t|
