@@ -10,11 +10,13 @@ ActiveAdmin.register Gutentag::Tag do
   # or
   #
   # permit_params do
-  #   permitted = [:name, :taggings_count]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
+  # permitted = [:name, :taggings_count]
+  # permitted << :other if params[:action] == 'create' && current_user.admin?
+  # permitted
   # end
   
-  permit_params :name
+ permit_params :name
+  
+  
   
 end

@@ -29,7 +29,7 @@ class Resource < ApplicationRecord
   include PgSearch::Model
   
   # include Gutentag gem
-  ::Gutentag::ActiveRecord.call self
+  Gutentag::ActiveRecord.call self
   
   #Definining the variables the pg_search should  work for,
   #the type of search (tsearch = full text search);

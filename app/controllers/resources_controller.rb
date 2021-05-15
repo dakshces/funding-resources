@@ -27,3 +27,4 @@ class ResourcesController < ApplicationController
       @resource = Resource.find(params[:id])
     end
 end
+
