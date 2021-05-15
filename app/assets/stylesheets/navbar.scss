@@ -35,6 +35,9 @@ nav ul li a {
   color: white!important;
 }
 
+.nav-item{
+  font-family: "Lato", sans-serif;
+}
 
 .nav-item a:active {
   background: lighten(#D81E05, 50%);
@@ -48,11 +51,12 @@ nav ul li a {
 }
 
 #dark nav {
-  background: black;
+  background: #121212;
 }
 
 #dark nav ul li a:hover {
-  background: transparent;
+  background: #D81E05;
+  transition: .5s;
 }
 
 
@@ -62,6 +66,7 @@ nav ul li a {
   margin: 28px;
   padding: 3px;
   color: white!important;
+  background-color: black;
 }
 
 .lightButton {
@@ -69,5 +74,6 @@ nav ul li a {
   border-radius: 10px;
   margin: 28px;
   padding: 3px;
-  color: white!important;
+  color: black!important;
+  background-color: white;
 }

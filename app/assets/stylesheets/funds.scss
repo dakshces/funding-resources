@@ -4,21 +4,33 @@
 
 .result-text {
     color: black;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 .field {
     font-weight: bold;
     font-size: 1.25em;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
+    color: black;
+}
+
+#dark .field {
+    font-weight: bold;
+    font-size: 1.25em;
+    font-family: "Lato", sans-serif;
+    color: white;
 }
 
 .card {
     font-weight: bold;
     font-size: 0.9em;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
+.card-result-text {
+    color: black;
+    font-family: "Lato", sans-serif;
+}
 
 .description {
     word-wrap: break-word;
@@ -26,10 +38,5 @@
     width: 60%;
     display: inline-block;
     line-height: 1.25em;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
 }
-
-#dark span {
-    color: #fff;
-}
-
