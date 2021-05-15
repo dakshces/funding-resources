@@ -43,4 +43,5 @@ class Resource < ApplicationRecord
     return "#{description}"
   end
   
+  
 end
