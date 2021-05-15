@@ -29,7 +29,9 @@ Resource.create(
     amount: '1800',
     contact_person: 'Diego Rodriguez',
     email: 'rodrigued@grinnell.edu' ,
-    web: 'https://grinco.sharepoint.com/sites/OAS/CLS/Internship/SitePages/Summer%20Funding.aspx ')
+    web: 'https://grinco.sharepoint.com/sites/OAS/CLS/Internship/SitePages/Summer%20Funding.aspx ',
+    requirements: 'First year, GPA: 6.0',
+    criteria: 'Experience')
     
 Resource.create(
     title: 'Professional Development Grants',

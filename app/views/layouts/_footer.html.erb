@@ -1,0 +1,12 @@
+<footer class="footer">
+    <hr size="2px" width="100%" color="#000">
+    <% if cookies[:theme] == "light" %>
+        <div class="field-ul"><%= link_to "Dark mode", root_path(:theme => "dark", :current_path => request.path) %></div>
+    <% else %>
+        <div class="field-ul"><%= link_to "Light mode", root_path(:theme => "light", :current_path => request.path) %></div>
+    <% end %>
+    
+    <div class="field-ul"><%= link_to "Contact", contact_path %></div>
+    
+    <div class="field-ul"><%= link_to "Admin Log in", sign_in_path %></div>
+</footer>
