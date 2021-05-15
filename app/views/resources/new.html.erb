@@ -8,9 +8,11 @@
     <%= simple_form_for @resource do |f| %>
       <span class="field"> <%= f.label :title, 'Fund Name' %> </span>
       <%= f.input :title, label: false %>
-      <span class="field"><%= f.label :contact_person, 'Fund Owner/Contact Person' %></span>
+      <span class="field"><%= f.label :contact_person, 'Fund Owner' %></span>
       <%= f.input :contact_person, label: false %>
-      <span class="field"><%= f.label :source, 'Department/Fund Source' %></span>
+      <span class="field"><%= f.label :email, "Fund Owner's Email" %></span>
+      <%= f.input :email, label: false %>
+      <span class="field"><%= f.label :source, 'Department' %></span>
       <%= f.input :source, label: false %>
       
       <%= f.button :submit %>

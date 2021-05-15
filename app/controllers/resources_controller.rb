@@ -19,7 +19,7 @@ class ResourcesController < ApplicationController
 
   private
     def resource_params
-      params.require(:resource).permit(:title, :description, :amount, :source, :contact_person, :web, :email)
+      params.require(:resource).permit(:title, :source, :contact_person, :email)
     end
 
 
