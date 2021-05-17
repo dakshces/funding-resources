@@ -12,6 +12,7 @@ User.create(
 
 # Resource id: nil, title: nil, description: "FUND TEST", amount: nil, source: nil, contact_person: nil,
 
+# this adds the tags
 [
   'tag1',
   'tag2'
@@ -26,9 +27,8 @@ Resource.create(
     description: 'I really hope the tag works',
     amount: 'infinite',
     contact_person: 'me',
-    web: 'https://idk.com',
-    approved: true,
-    #tags: (Gutentag::Tag id: 18, name: "exampletag1", created_at: "2021-05-15 20:50:48", updated_at: "2021-05-15 20:50:48", taggings_count: 0)
+    web: 'https://idk.com'
+    approved: true
     )
     
 
