@@ -32,10 +32,23 @@
         <h3 class="result-text"><span class="field">Source:</span> <%= @resource.source %> </h3>
     <% end %>
     
-    <% if @resource.description.empty? %>
-        <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description">No description provided.</span></h3>
+    <% if @resource.requirements.nil? %>
+        <h3 class="result-text"><span class="field">Requirements:</span> None</h3>
     <% else %>
-        <h3 class="result-text"><div class="field">Description</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
+        <h3 class="result-text"><span class="field">Requirements:</span> <%= @resource.requirements %></h3>
+    <% end %>
+    
+    
+    <% if @resource.criteria.nil? %>
+        <h3 class="result-text"><span class="field">Criteria:</span> None</h3>
+    <% else %>
+        <h3 class="result-text"><span class="field">Criteria:</span> <%= @resource.criteria %></h3>
+    <% end %>
+    
+    <% if @resource.description.empty? %>
+        <h3 class="result-text"><div class="field">Description:</div> <br/> &nbsp; <span class="description">No description provided.</span></h3>
+    <% else %>
+        <h3 class="result-text"><div class="field">Description:</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
     <% end %>
     
     <%= link_to "Fund Website", "#{@resource.web}", class: "btn btn-primary", :target => "_blank"  %>

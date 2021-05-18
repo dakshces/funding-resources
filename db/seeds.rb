@@ -29,7 +29,7 @@ Resource.create(
     contact_person: 'me',
     web: 'https://idk.com',
     email: 'testfund@example.com',
-    approved: true 
+    approved: true     
     )
     
 
