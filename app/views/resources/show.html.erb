@@ -26,7 +26,7 @@
         <h3 class="result-text"><span class="field">Amount:</span> $<%= @resource.amount %> </h3>
     <% end %>
     
-    <% if @resource.source.empty? %>
+    <% if @resource.source.nil? %>
         <h3 class="result-text"><span class="field">Source:</span> N/A</h3>
     <% else %>
         <h3 class="result-text"><span class="field">Source:</span> <%= @resource.source %> </h3>
