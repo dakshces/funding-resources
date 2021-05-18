@@ -27,7 +27,7 @@ Resource.create(
     description: 'I really hope the tag works',
     amount: 'infinite',
     contact_person: 'me',
-    web: 'https://idk.com'
+    web: 'https://idk.com',
     approved: true
     )
     

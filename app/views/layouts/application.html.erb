@@ -26,6 +26,10 @@
         <p class="alert alert-warning"><%= alert %></p>
       <% end %>
     </section>
+    
+    <div class="container">
     <%= yield %>
+    <%= render partial: 'layouts/footer' %>
+    </div>
   </body>
 </html>
