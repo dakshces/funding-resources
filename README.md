@@ -3,6 +3,31 @@
 Welcome to the campus funding resources project. Visit the site at `https://funding-resources.herokuapp.com`. Please note
 that this setup guide assumes you are using an Ubuntu server on AWS Cloud9. 
 
+## Initial Setup ##
+
+Starting with a completely new Ubuntu environment in AWS Cloud9 this is what we ran:
+```
+git clone _github_repo_link
+rvm install "ruby-2.7.0"
+source <(curl -sL https://cdn.learnenough.com/yarn_install)
+cd funding-resources
+```
+
+ADD TO `Gemfile`:
+`gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f’``
+
+```
+sudo apt install postgresql-contrib libpq-dev
+bundle install
+bundle update
+yarn install --check-files
+sudo -u postgres createuser ubuntu -s
+rails db:create
+
+rails db:migrate
+rails server
+```
+
 ## Common Commands ##
 
 Every time you add a new gem (this is similar to a library in C) you will need to run `bundle install`. 
@@ -11,8 +36,11 @@ To update the data table, run `rails generate migration [migration name]`. Then,
 the generated migration file to include instructions for how to modify the database. 
 Run `rails db:migrate` after that. 
 
-You can find the data we used for developement in db/seeds.rb. If you want to re-populate the data,
-run `rake db:reset`.
+`rake db:reset` will re-populate the database with the data from the db/seeds.rb file.
+`rake db:migrate:reset` will reset the database removing all data. This command fixed
+some errors we had after merging code.
+`rake db:seed` populates the database with the data from the db/seeds.rb file without
+changing any of the current data stored.
 
 To log in as an administrator (access active admin by adding "/admin" to the end of the base url), use
 the following:
@@ -21,9 +49,44 @@ username: admin@example.com
 password: password 
 ```
 
-## Initial Setup ##
+## Using Github ##
 
-Run `sudo apt-get install libpq-dev`. If prompted, update [Yarn](https://gist.github.com/mikerourke/0c2cac1bec77fb4c1d875bfaee487074).
+For most of us this was one of our first experiences using github for version control.
+If you are completely lost this is what we ran. Keep in mind we are new to this so some
+of this may not accurate. Since we didn't have permission for the repository, we forked
+it and worked on that.
+This is a quick breakdown of the commands that we ran. (Note: text between underscores,
+such as `"_branch_name_"`, are just place holders for text that should be specific to
+the task that you are working on)
+
+BEFORE YOU START CODING
+```
+git checkout -b "_branch_name_"
+```
+
+WHILE CODING
+```
+git add -A
+git commit -m "_comment_"
+```
+This essentially saves all the changes that you have made to the branch so far. We
+highly recommend that you do this often in case something goes wrong.
+
+MERGING
+```
+git add -A
+git commit -m "_comment_"
+git pull _github_repo_link_ master
+```
+FIX CONFLICTS (there may be an error message that has the files that need to me fixed)
+```
+git add -A
+git commit -m "_comment_"
+git push -u origin "_branch_name_"
+git checkout master
+git merge _branch_name_
+git push
+```
 
 ## What's in the box ##
 
@@ -41,11 +104,12 @@ Run `sudo apt-get install libpq-dev`. If prompted, update [Yarn](https://gist.gi
 
 ## Future Tasks and Goals ##
 
-1. Define more tags for resources
-2. Add a user sign up page with a way to verify that users have a .grinnell.edu email address. This is a great 
-   first task since the Hartl book has a step-by-step walkthrough for how to implement it. 
-3. Allow non-administrators to add resources
-4. Create a map feature that allows users to find resource locations on campus (we suggest using [arcGIS](https://github.com/ajturner/arcgis-ruby))
+1. Add a user sign up page with a way to verify that users have
+   a .grinnell.edu email address. The Hartl book has a step-by-step walkthrough
+   for how to implement it. 
+2. Create a map feature that allows users to find resource locations on
+   campus (we suggest using [arcGIS](https://github.com/ajturner/arcgis-ruby)).
+3. Continue working on appearance.
 
 
 ## Verbose musings ##
