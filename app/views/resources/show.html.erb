@@ -20,7 +20,7 @@
             </div>
         </div>
     
-    <% if @resource.amount.empty? %>
+    <% if @resource.amount.nil? %>
         <h3 class="result-text"><span class="field">Amount:</span> N/A</h3>
     <% else %>
         <h3 class="result-text"><span class="field">Amount:</span> $<%= @resource.amount %> </h3>
@@ -45,7 +45,7 @@
         <h3 class="result-text"><span class="field">Criteria:</span> <%= @resource.criteria %></h3>
     <% end %>
     
-    <% if @resource.description.empty? %>
+    <% if @resource.description.nil? %>
         <h3 class="result-text"><div class="field">Description:</div> <br/> &nbsp; <span class="description">No description provided.</span></h3>
     <% else %>
         <h3 class="result-text"><div class="field">Description:</div> <br/> &nbsp; <span class="description"><%= @resource.description %></span></h3>
