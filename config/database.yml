@@ -48,3 +48,13 @@ test:
   database: app_test
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+ # For details on connection pooling, see Rails configuration guide
+ # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: funding_resources_production
+  username: funding_resources
+ 
