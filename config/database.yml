@@ -49,6 +49,10 @@ test:
   pool: 5
   timeout: 5000
 
+
+# I added the code below based on the Hart tutorial when I was trying to deploy to Heroku.
+# I don't know what it does. It didn't immediately fix my issue (it might have helped)
+# but it also didn't break anything so I'm leaving it.
 production:
   adapter: postgresql
   encoding: unicode

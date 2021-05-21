@@ -14,8 +14,9 @@ User.create(
 
 # this adds the tags
 [
-  'tag1',
-  'tag2'
+  'CLS',
+  'Computer Science',
+  'Internship'
 ].each do |name|
   tag1 = Gutentag::Tag.create(name: name)
    tag1.save
