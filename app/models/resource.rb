@@ -14,8 +14,10 @@ class Resource < ApplicationRecord
   # Currently validates any email address but can be switched to only grinnell emails
   VALID_EMAIL_REGEX = /\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,10}\Z/i
   GRINNELL_EMAIL_REGEX = /\A[A-Z0-9._%+-]+@grinnell.edu\Z/i
-  validates :email, presence: true, on: :create
-  validates :email, format: { with: VALID_EMAIL_REGEX, message: "is invalid"  }
+  validates :email, allow_blank: true, format: { with: VALID_EMAIL_REGEX, message: "is invalid"  }
+  
+  # This validation may be useful
+  # validates :email, presence: true, on: :create
   
   # This may be a good validation to have
   # This validates that all titles are unique, it could prevent duplicate submissions.

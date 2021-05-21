@@ -24,31 +24,19 @@ end
  
 
 Resource.create(
-    title: 'this is a test fund',
-    description: 'I really hope the tag works',
-    amount: 'infinite',
-    contact_person: 'me',
-    web: 'https://idk.com',
-    approved: true
-    )
-    
-
-Resource.create(
     title: 'Service & Social Innovation Grant',
-    description: 'Social Service Grants through Grinnell',
+    description: "The Ragnar Thorisson '11 Service and Social Innovation Grant is designed to support collaborative
+                    service and social justice projects in our local Grinnell or Iowa community. First, second,
+                    third, and fourth year students may apply for funding to offset expenses associated with projects
+                    that address locally identified service or social justice challenges.",
     amount: '3000',
     contact_person: 'Kiera Wilson',
+    requirements: '1-4th year students',
+    criteria: '',
     web: 'https://grinco.sharepoint.com/sites/ServiceAndSocialInnovation/SitePages/Funding.aspx ',
     approved: true
     )
   
-  #Resource.tag_names << 'Does not correspond with financial aid'
-  #resource1.tag_names << 'Please please please work this time'
-  #resource1.tag_names << 'You know the problem with Skyrim these days?'
-  #resource1.tag_names << 'Catz rule'
-  #resource1.save
-
-
 Resource.create(
     title: 'Summer Internship Funding Grants',
     description: 'Income supplementation for unpaid internships',
