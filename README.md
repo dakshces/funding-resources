@@ -1,13 +1,17 @@
 # README #
 
-Welcome to the campus funding resources project. Visit the site at `https://funding-resources.herokuapp.com`. Please note
-that this setup guide assumes you are using an Ubuntu server on AWS Cloud9. 
+Welcome to the campus funding resources project. Visit the current site at
+`https://funding-resources-spring2-2021.herokuapp.com`. You can see the previous group's site
+here `https://funding-resources.herokuapp.com`. Please note that this setup guide assumes
+you are using an Ubuntu server on AWS Cloud9. 
 
 ## Initial Setup ##
 
-Starting with a completely new Ubuntu environment in AWS Cloud9 this is what we ran:
+(Note: text between underscores, such as "`_github_repo_link_`", are just place holders for
+text that should be specific to the task that you are working on) Starting with a completely
+new Ubuntu environment in AWS Cloud9 this is what we ran:
 ```
-git clone _github_repo_link
+git clone _github_repo_link_
 rvm install "ruby-2.7.0"
 source <(curl -sL https://cdn.learnenough.com/yarn_install)
 cd funding-resources
@@ -56,7 +60,7 @@ If you are completely lost this is what we ran. Keep in mind we are new to this 
 of this may not accurate. Since we didn't have permission for the repository, we forked
 it and worked on that.
 This is a quick breakdown of the commands that we ran. (Note: text between underscores,
-such as `"_branch_name_"`, are just place holders for text that should be specific to
+such as "`_branch_name_`", are just place holders for text that should be specific to
 the task that you are working on)
 
 BEFORE YOU START CODING
@@ -86,6 +90,23 @@ git push -u origin "_branch_name_"
 git checkout master
 git merge _branch_name_
 git push
+```
+
+## Deploying to Heroku ##
+
+We deployed the website using a personal Heroku account. These are the commands we ran:
+
+SETUP
+```
+source <(curl -sL https://cdn.learnenough.com/heroku_install)
+heroku login --interactive
+heroku create --stack heroku-18
+heroku rename _site_name_
+```
+
+UPDATE WEBSITE
+```
+git push heroku master
 ```
 
 ## What's in the box ##
