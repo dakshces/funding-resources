@@ -2,7 +2,8 @@
 
 Welcome to the campus funding resources project. Visit the current site at
 `https://funding-resources-spring2-2021.herokuapp.com`. You can see the previous group's site
-here `https://funding-resources.herokuapp.com`. Please note that this setup guide assumes
+here `https://funding-resources.herokuapp.com` and their github page here
+`https://github.com/CSC322-Grinnell/funding-resources`. Please note that this setup guide assumes
 you are using an Ubuntu server on AWS Cloud9. 
 
 ## Initial Setup ##
@@ -18,7 +19,9 @@ cd funding-resources
 ```
 
 ADD TO `Gemfile`:
-`gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f’``
+```
+gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f’
+```
 
 ```
 sudo apt install postgresql-contrib libpq-dev
@@ -30,27 +33,6 @@ rails db:create
 
 rails db:migrate
 rails server
-```
-
-## Common Commands ##
-
-Every time you add a new gem (this is similar to a library in C) you will need to run `bundle install`. 
-
-To update the data table, run `rails generate migration [migration name]`. Then, update
-the generated migration file to include instructions for how to modify the database. 
-Run `rails db:migrate` after that. 
-
-`rake db:reset` will re-populate the database with the data from the db/seeds.rb file.
-`rake db:migrate:reset` will reset the database removing all data. This command fixed
-some errors we had after merging code.
-`rake db:seed` populates the database with the data from the db/seeds.rb file without
-changing any of the current data stored.
-
-To log in as an administrator (access active admin by adding "/admin" to the end of the base url), use
-the following:
-```
-username: admin@example.com
-password: password 
 ```
 
 ## Using Github ##
@@ -102,11 +84,35 @@ source <(curl -sL https://cdn.learnenough.com/heroku_install)
 heroku login --interactive
 heroku create --stack heroku-18
 heroku rename _site_name_
+git push heroku master
+heroku run rake db:migrate
+heroku run rake db:seed
 ```
 
 UPDATE WEBSITE
 ```
 git push heroku master
+```
+
+## Common Commands ##
+
+Every time you add a new gem (this is similar to a library in C) you will need to run `bundle install`. 
+
+To update the data table, run `rails generate migration [migration name]`. Then, update
+the generated migration file to include instructions for how to modify the database. 
+Run `rails db:migrate` after that. 
+
+`rake db:reset` will re-populate the database with the data from the db/seeds.rb file.
+`rake db:migrate:reset` will reset the database removing all data. This command fixed
+some errors we had after merging code.
+`rake db:seed` populates the database with the data from the db/seeds.rb file without
+changing any of the current data stored.
+
+To log in as an administrator (access active admin by adding "/admin" to the end of the base url), use
+the following:
+```
+username: admin@example.com
+password: password 
 ```
 
 ## What's in the box ##
